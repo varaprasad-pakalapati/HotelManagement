@@ -63,11 +63,6 @@ public class HomePage {
 
     //region Methods
 
-    public HomePage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
-
     public void login(String username, String password) {
         loginLink.click();
         userName.sendKeys(username);
