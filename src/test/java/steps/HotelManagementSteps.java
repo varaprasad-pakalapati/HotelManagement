@@ -1,10 +1,6 @@
 package steps;
 
 import com.google.inject.Inject;
-import com.google.inject.Provider;
-import configuration.Driver;
-import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -20,7 +16,8 @@ import java.util.List;
 
 public class HotelManagementSteps {
 
-    private static HomePage homePage;
+    @Inject
+    private HomePage homePage;
 
     public static List<Entry> entryList = new ArrayList<>();
 
@@ -30,7 +27,7 @@ public class HotelManagementSteps {
     @Given("^user have hotel management application$")
     public void iHaveHotelManagementApplication() {
         driver.get("http://localhost:3003/");
-        homePage = new HomePage(driver);
+        //homePage = new HomePage(driver);
     }
 
     @And("^user login with (.*) and (.*)$")

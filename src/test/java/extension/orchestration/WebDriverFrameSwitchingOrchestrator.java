@@ -38,7 +38,7 @@ public class WebDriverFrameSwitchingOrchestrator {
         if (force || this.frame != null) {
             this.frame = null;
             LOG.log(Level.FINE, "Switching to default content");
-            ((WebDriver)this.dependencyInjector.get(WebDriver.class)).switchTo().defaultContent();
+            this.dependencyInjector.get(WebDriver.class).switchTo().defaultContent();
         }
     }
 }

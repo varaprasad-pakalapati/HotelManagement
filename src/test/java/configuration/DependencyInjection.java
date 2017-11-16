@@ -12,7 +12,7 @@ import extension.dependencies.InjectionError;
 import guice.SeleniumPomGuiceModule;
 import org.openqa.selenium.WebDriver;
 
-public class DependencyInjection extends AbstractModule implements InjectorSource, DependencyInjector {
+public class DependencyInjection extends AbstractModule implements InjectorSource {
 
     private Injector injector;
 
@@ -30,12 +30,13 @@ public class DependencyInjection extends AbstractModule implements InjectorSourc
     public Injector getInjector() {
         if (injector != null)
             return injector;
-        injector = new SeleniumPomGuiceModule(CucumberModules.SCENARIO, this).getInjector();
+        //injector = new SeleniumPomGuiceModule(CucumberModules.SCENARIO, this).getInjector();
+        injector = Guice.createInjector(CucumberModules.SCENARIO, this);
         return injector;
     }
 
-    @Override
+    /*@Override
     public <T> T get(Class<T> aClass) throws InjectionError {
         return getInjector().getInstance(aClass);
-    }
+    }*/
 }

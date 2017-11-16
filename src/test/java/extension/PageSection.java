@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public abstract class PageSection implements SearchContext, Refreshable, WebElementExtensions {
-    private static final Integer DEFAULT_WAIT_TIMEOUT = Integer.valueOf(10000);
+    private static final Integer DEFAULT_WAIT_TIMEOUT = 20000;
     protected PageElement rootElement;
     private Refreshable parent;
 
