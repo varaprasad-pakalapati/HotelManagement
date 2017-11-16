@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.hotelmanagement</groupId>
-    <artifactId>tests</artifactId>
+    <artifactId>hotelmanagement</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -96,7 +96,28 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.4</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.google.inject.extensions</groupId>
+            <artifactId>guice-multibindings</artifactId>
+            <version>4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>0.9.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.10.19</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.22</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 </project>
