@@ -9,6 +9,7 @@ import cucumber.runtime.java.guice.InjectorSource;
 import cucumber.runtime.java.guice.ScenarioScoped;
 import extension.dependencies.DependencyInjector;
 import extension.dependencies.InjectionError;
+import guice.SeleniumPomGuiceModule;
 import org.openqa.selenium.WebDriver;
 
 public class DependencyInjection extends AbstractModule implements InjectorSource, DependencyInjector {
@@ -29,7 +30,7 @@ public class DependencyInjection extends AbstractModule implements InjectorSourc
     public Injector getInjector() {
         if (injector != null)
             return injector;
-        injector = Guice.createInjector(CucumberModules.SCENARIO, this);
+        injector = new SeleniumPomGuiceModule(CucumberModules.SCENARIO, this).getInjector();
         return injector;
     }
 
